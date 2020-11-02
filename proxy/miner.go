@@ -6,11 +6,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ethereum/ethash"
+	"github.com/etclabscore/etchash"
 	"github.com/ethereum/go-ethereum/common"
 )
 
-var hasher = ethash.New()
+var hasher = etchash.New()
 
 func (s *ProxyServer) processShare(login, id, ip string, t *BlockTemplate, params []string) (bool, bool) {
 	nonceHex := params[0]
