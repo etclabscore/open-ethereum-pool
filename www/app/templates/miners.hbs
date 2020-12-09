@@ -1,19 +1,19 @@
 <div class="jumbotron-brand">
   <div class="container">
-    <p class="lead">Total hashrate: {{format-hashrate model.hashrate}}.</p>
-    <strong>Total miners:</strong> <span class="label label-info">{{model.minersTotal}}</span>
+    <p class="lead">Toplam Hashgücü: {{format-hashrate model.hashrate}}.</p>
+    <strong>Toplam Madenci:</strong> <span class="label label-info">{{model.minersTotal}}</span>
   </div>
 </div>
 <div class="container">
   {{#if model.miners}}
-  <h4>Miners</h4>
+  <h4>Madenciler</h4>
   <div class="table-responsive">
     <table class="table table-condensed table-striped">
       <thead>
         <tr>
-          <th>Login</th>
-          <th>Hashrate</th>
-          <th>Last Beat</th>
+          <th>ETC Cüzdan</th>
+          <th>Hashgücü</th>
+          <th>Son Görülme</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +28,6 @@
     </table>
   </div>
   {{else}}
-  <h3>No miners</h3>
+  <h3>Henüz Bağlı Madenci Yok</h3>
   {{/if}}
 </div>
