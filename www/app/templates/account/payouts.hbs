@@ -1,13 +1,13 @@
 <div class="container">
   {{#if model.payments}}
-  <h4>Your Latest Payouts</h4>
+  <h4>Son Ödemeleriniz</h4>
   <div class="table-responsive">
     <table class="table table-condensed table-striped">
       <thead>
         <tr>
-          <th>Time</th>
+          <th>Zaman</th>
           <th>Tx ID</th>
-          <th>Amount</th>
+          <th>Tutar</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +24,6 @@
     </table>
   </div>
   {{else}}
-  <h3>No payouts yet</h3>
+  <h3>Henüz Ödeme Yok</h3>
   {{/if}}
 </div>
