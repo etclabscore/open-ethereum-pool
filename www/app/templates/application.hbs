@@ -15,12 +15,12 @@
       <ul class="nav navbar-nav">
         {{#active-li currentWhen='index' }}
           {{#link-to 'index'}}
-            <i class="fa fa-home"></i> Home
+            <i class="fa fa-home"></i> Anasayfa
           {{/link-to}}
         {{/active-li}}
         {{#active-li currentWhen='blocks' }}
           {{#link-to 'blocks'}}
-            <i class="fa fa-cubes"></i> Pool Blocks
+            <i class="fa fa-cubes"></i> Havuz Blokları
             {{#if immatureTotal}}
               <span class="ul">{{immatureTotal}}</span>
             {{/if}}
@@ -28,22 +28,22 @@
         {{/active-li}}
         {{#active-li currentWhen='payments' }}
           {{#link-to 'payments'}}
-            <i class="fa fa-paper-plane"></i> Payments
+            <i class="fa fa-paper-plane"></i> Ödemeler
           {{/link-to}}
         {{/active-li}}
         {{#active-li currentWhen='miners' }}
           {{#link-to 'miners'}}
-            <i class="fa fa-users"></i> Miners
+            <i class="fa fa-users"></i> Madenciler
           {{/link-to}}
         {{/active-li}}
         {{#active-li currentWhen='help' }}
           {{#link-to 'help'}}
-            <i class="fa fa-rocket"></i> Help
+            <i class="fa fa-rocket"></i> Yardım
           {{/link-to}}
         {{/active-li}}
         {{#active-li currentWhen='about' }}
           {{#link-to 'about'}}
-            <i class="fa fa-comments"></i> About
+            <i class="fa fa-comments"></i> Hakkımızda
           {{/link-to}}
         {{/active-li}}
       </ul>
