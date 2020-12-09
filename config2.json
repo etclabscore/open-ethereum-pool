@@ -20,7 +20,7 @@
 
 		"stratum": {
 			"enabled": true,
-			"listen": "0.0.0.0:8008",
+			"listen": "0.0.0.0:8002",
 			"timeout": "120s",
 			"maxConn": 8192
 		},
