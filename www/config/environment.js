@@ -15,14 +15,14 @@ module.exports = function(environment) {
   
       APP: {
         // API host and port
-        ApiUrl: '//example.net/',
+        ApiUrl: '//etcturk.com/',
   
         // HTTP mining endpoint
-        HttpHost: 'http://example.net',
+        HttpHost: 'http://etcturk.com',
         HttpPort: 8888,
   
         // Stratum mining endpoint
-        StratumHost: 'example.net',
+        StratumHost: 'etcturk.com',
         StratumPort: 8008,
   
         // The ETC network used (classic, mordor)
@@ -30,7 +30,7 @@ module.exports = function(environment) {
 
         // Fee and payout details
         PoolFee: '1%',
-        PayoutThreshold: '0.5 ETC',
+        PayoutThreshold: '0.1 ETC',
   
         // For network hashrate (change for your favourite fork)
         BlockTime: 13.2
