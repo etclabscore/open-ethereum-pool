@@ -1,5 +1,5 @@
 {
-	"threads": 2,
+	"threads": 8,
 	"coin": "etc",
 	"name": "main",
 	"network": "classic",
@@ -12,7 +12,7 @@
 		"behindReverseProxy": false,
 		"blockRefreshInterval": "120ms",
 		"stateUpdateInterval": "3s",
-		"difficulty": 2000000000,
+		"difficulty": 8000000000,
 		"hashrateExpiration": "3h",
 
 		"healthCheck": true,
@@ -48,7 +48,7 @@
 	},
 
 	"api": {
-		"enabled": true,
+		"enabled": false,
 		"purgeOnly": false,
 		"purgeInterval": "10m",
 		"listen": "0.0.0.0:8080",
@@ -84,7 +84,7 @@
 	"unlocker": {
 		"enabled": false,
 		"poolFee": 1.0,
-		"poolFeeAddress": "",
+		"poolFeeAddress": "0x841Dc834eC4c8925b37d4eFaDCCeFca25582BD8a",
 		"depth": 120,
 		"immatureDepth": 20,
 		"keepTxFees": false,
@@ -95,15 +95,15 @@
 
 	"payouts": {
 		"enabled": false,
-		"requirePeers": 25,
-		"interval": "120m",
+		"requirePeers": 5,
+		"interval": "1430m",
 		"daemon": "http://127.0.0.1:8545",
 		"timeout": "10s",
-		"address": "0x0",
+		"address": "0xa0102b3390ad022160d0a37e87191c76483ef669",
 		"gas": "21000",
 		"gasPrice": "50000000000",
 		"autoGas": true,
-		"threshold": 500000000,
+		"threshold": 100000000,
 		"bgsave": false
 	},
 
