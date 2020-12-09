@@ -1,9 +1,9 @@
 <div class="jumbotron-brand">
   <div class="container">
-    <p class="lead">Pool always pays full block rewards including TX fees and uncle rewards.</p>
+    <p class="lead">Havuz gönderim ücretler ve yarım bloklar dahil tüm blok ödüllerinin ödemesini yapar.</p>
     <strong>
-      Block maturity requires <u>up to</u> </strong> <span class="label label-success">520</span> <strong>blocks.
-      Usually it's less indeed.
+      Blok olgunlaşması için <u>yaklaşık</u> </strong> <span class="label label-success">120</span> <strong>blok gerekir.
+      Ancak bu süre ağ değişimine bağlı olarak genellikle daha kısa sürede tamamlanır.
     </strong>
   </div>
 </div>
@@ -15,13 +15,13 @@
 
   <ul class="nav nav-tabs">
     {{#active-li currentWhen='blocks.index' role='presentation'}}
-      {{#link-to 'blocks.index'}}Blocks <span class="badge alert-success">{{format-number model.maturedTotal}}</span>{{/link-to}}
+      {{#link-to 'blocks.index'}}Bloklar <span class="badge alert-success">{{format-number model.maturedTotal}}</span>{{/link-to}}
     {{/active-li}}
     {{#active-li currentWhen='blocks.immature' role='presentation'}}
-      {{#link-to 'blocks.immature'}}Immature <span class="badge alert-success">{{format-number model.immatureTotal}}</span>{{/link-to}}
+      {{#link-to 'blocks.immature'}}Olgunlaşmamış <span class="badge alert-success">{{format-number model.immatureTotal}}</span>{{/link-to}}
     {{/active-li}}
     {{#active-li currentWhen='blocks.pending' role='presentation'}}
-      {{#link-to 'blocks.pending'}}New Blocks <span class="badge alert-info">{{format-number model.candidatesTotal}}</span>{{/link-to}}
+      {{#link-to 'blocks.pending'}}Yeni Bloklar <span class="badge alert-info">{{format-number model.candidatesTotal}}</span>{{/link-to}}
     {{/active-li}}
   </ul>
   {{outlet}}
