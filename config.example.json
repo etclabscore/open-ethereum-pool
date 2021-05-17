@@ -2,6 +2,7 @@
 	"threads": 2,
 	"coin": "etc",
 	"name": "main",
+  "pplns": 9000,
 	"network": "classic",
 
 	"proxy": {
@@ -14,6 +15,7 @@
 		"stateUpdateInterval": "3s",
 		"difficulty": 2000000000,
 		"hashrateExpiration": "3h",
+		"stratumHostname": "example.net",
 
 		"healthCheck": true,
 		"maxFails": 100,
@@ -27,6 +29,7 @@
 
 		"policy": {
 			"workers": 8,
+                        "blacklist_file": "blacklist.json",
 			"resetInterval": "60m",
 			"refreshInterval": "1m",
 
@@ -56,9 +59,13 @@
 		"hashrateWindow": "30m",
 		"hashrateLargeWindow": "3h",
 		"luckWindow": [64, 128, 256],
-		"payments": 30,
-		"blocks": 50
-	},
+                "payments": 50,
+                "blocks": 50,
+                "poolCharts":"0 */20 * * * *",
+                "poolChartsNum":74,
+                "minerCharts":"0 */20 * * * *",
+                "minerChartsNum":74      
+  },
 
 	"upstreamCheckInterval": "5s",
 	"upstream": [
@@ -105,6 +112,7 @@
 		"autoGas": true,
 		"threshold": 500000000,
 		"bgsave": false
+		"concurrentTx": 5
 	},
 
 	"newrelicEnabled": false,

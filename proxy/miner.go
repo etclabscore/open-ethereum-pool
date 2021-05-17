@@ -32,10 +32,15 @@ func (s *ProxyServer) processShare(login, id, ip string, t *BlockTemplate, param
 	mixDigest := params[2]
 	nonce, _ := strconv.ParseUint(strings.Replace(nonceHex, "0x", "", -1), 16, 64)
 	shareDiff := s.config.Proxy.Difficulty
+	stratumHostname := s.config.Proxy.StratumHostname
 
 	h, ok := t.headers[hashNoNonce]
 	if !ok {
 		log.Printf("Stale share from %v@%v", login, ip)
+		// Here we have a stale share, we need to create a redis function as follows
+		// CASE1: stale Share
+		// s.backend.WriteWorkerShareStatus(login, id, valid bool, stale bool, invalid bool)
+                        s.backend.WriteStaleShare(login, nonceHex)
 		return false, false
 	}
 
@@ -56,6 +61,11 @@ func (s *ProxyServer) processShare(login, id, ip string, t *BlockTemplate, param
 	}
 
 	if !hasher.Verify(share) {
+		// THis is an invalid block, record it
+		// CASE2: invalid Share
+		// s.backend.WriteWorkerShareStatus(login, id, valid bool, stale bool, invalid bool)
+        s.backend.WriteInvalidShare(login, nonceHex)
+
 		return false, false
 	}
 
@@ -68,7 +78,7 @@ func (s *ProxyServer) processShare(login, id, ip string, t *BlockTemplate, param
 			return false, false
 		} else {
 			s.fetchBlockTemplate()
-			exist, err := s.backend.WriteBlock(login, id, params, shareDiff, h.diff.Int64(), h.height, s.hashrateExpiration)
+			exist, err := s.backend.WriteBlock(login, id, params, shareDiff, h.diff.Int64(), h.height, s.hashrateExpiration, stratumHostname)
 			if exist {
 				return true, false
 			}
@@ -77,10 +87,11 @@ func (s *ProxyServer) processShare(login, id, ip string, t *BlockTemplate, param
 			} else {
 				log.Printf("Inserted block %v to backend", h.height)
 			}
+			// Here we have a valid share, which is in-fact a block and it is written to db
 			log.Printf("Block found by miner %v@%v at height %d", login, ip, h.height)
 		}
 	} else {
-		exist, err := s.backend.WriteShare(login, id, params, shareDiff, h.height, s.hashrateExpiration)
+		exist, err := s.backend.WriteShare(login, id, params, shareDiff, h.height, s.hashrateExpiration, stratumHostname)
 		if exist {
 			return true, false
 		}
