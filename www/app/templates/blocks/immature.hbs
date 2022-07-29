@@ -1,14 +1,14 @@
 {{#if model.immature}}
-<h4>Olgunlaşmamış Bloklar</h4>
+<h4>Immature Blocks</h4>
 <table class="table table-condensed table-striped">
   <thead>
     <tr>
-      <th>Blok No</th>
-      <th>Blok Hash</th>
-      <th>Bulma Zamanı</th>
-      <th>Şans</th>
-      <th>Ödül</th>
-      <th>Tür</th>
+      <th>Height</th>
+      <th>Login</th>
+      <th>Time Found</th>
+      <th>Variance</th>
+      <th>Reward</th>
+      <th>Type</th>
     </tr>
   </thead>
   <tbody>
@@ -18,5 +18,5 @@
   </tbody>
 </table>
 {{else}}
-<h3>Henüz Olgunlaşmamış Blok Yok</h3>
+<h3>No immature blocks yet</h3>
 {{/if}}
