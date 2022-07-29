@@ -1,4 +1,6 @@
 <div class="container">
+{{high-charts mode=chartMode chartOptions=chartOptions content=chartData}}
+{{high-charts mode=chartMode chartOptions=shareChart content=chartData}}
   {{#if model.workers}}
   <h4>Your Workers</h4>
   <div class="table-responsive">
@@ -8,6 +10,8 @@
           <th>ID</th>
           <th>Hashrate (rough, short average)</th>
           <th>Hashrate (accurate, long average)</th>
+          <th>Blocks</th>
+          <th>Valid / Stale / Invalid 24h</th>
           <th>Last Share</th>
         </tr>
       </thead>
@@ -15,8 +19,10 @@
         {{#each-in model.workers as |k v|}}
           <tr class="{{if v.offline "warning" "success"}}">
             <td>{{k}}</td>
-            <td>{{format-hashrate v.hr}}</td>
-            <td>{{format-hashrate v.hr2}}</td>
+            <td>{{format-hashrate v.hr}}  {{#if v.w_stat_s}}<i class="fa fa-arrow-up" style="color:rgb(0, 9, 128)" aria-hidden="true"></i>{{else}}<i class="fa fa-arrow-down" style="color:red" aria-hidden="true"></i>{{/if}}</td>
+            <td>{{format-hashrate v.hr2}}  {{#if v.w_stat}}<i class="fa fa-arrow-up" style="color:rgb(0, 9, 128)" aria-hidden="true"></i>{{else}}<i class="fa fa-arrow-down" style="color:red" aria-hidden="true"></i>{{/if}}</td>
+            <td>{{v.blocks}}</td>
+            <td><span class="text-green">{{v.valid}}</span> ({{v.v_per}}%) / <span class="text-yellow">{{v.stale}}</span> ({{v.s_per}}%) / <span class="text-red">{{v.invalid}}</span> ({{v.i_per}}%)</td>
             <td>{{format-relative (seconds-to-ms v.lastBeat)}}</td>
           </tr>
         {{/each-in}}

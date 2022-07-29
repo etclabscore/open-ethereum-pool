@@ -17,6 +17,7 @@
         </div>
         {{/if}}
         <div style="display: block;"><i class="fa fa-money"></i> Total Paid: <span>{{format-balance model.stats.paid}}</span></div>
+        <div style="display: block;"><i class="fa fa-money"></i> Last 24h Reward: <span>{{format-balance model.24hreward}}</span></div>
       </div>
       <div class="col-md-4 stats">
         {{#if model.stats.lastShare}}
@@ -32,7 +33,7 @@
         <div style="display: block;"><i class="fa fa-tachometer"></i> Blocks Found: <span>{{format-number model.stats.blocksFound fallback='0'}}</span></div>
         <div style="display: block;"><i class="fa fa-paper-plane-o"></i> Total Payments: <span>{{format-number model.paymentsTotal}}</span></div>
         <div style="display: block;">
-          <i class="fa fa-gears"></i> Your Round Share: <span>{{format-number roundPercent style='percent' maximumFractionDigits='6'}}</span><br/>
+          <i class="fa fa-gears"></i> Your Round Share: <span>{{format-number roundPercent style='percent'}}</span><br/>
           <small>Percent of your contribution to current round.</small>
         </div>
         <div style="display: block;">
@@ -48,6 +49,9 @@
   <ul class="nav nav-tabs">
     {{#active-li currentWhen='account.index' role='presentation'}}
       {{#link-to 'account.index'}}Workers <span class="badge alert-danger">{{model.workersOffline}}</span>{{/link-to}}
+    {{/active-li}}
+    {{#active-li currentWhen='account.rewards' role='presentation'}}
+      {{#link-to 'account.rewards'}}Rewards{{/link-to}}
     {{/active-li}}
     {{#active-li currentWhen='account.payouts' role='presentation'}}
       {{#link-to 'account.payouts'}}Payouts{{/link-to}}

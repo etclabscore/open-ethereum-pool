@@ -9,6 +9,7 @@
 </div>
 
 <div class="container">
+  {{high-charts mode=stockChart chartOptions=chartOptions content=chartData}}
   {{#if model.luck}}
     {{partial "luck"}}
   {{/if}}

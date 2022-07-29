@@ -8,11 +8,11 @@
   </td>
   <td>
     {{#if block.uncle}}
-      <a href="https://expedition.dev/uncle/{{block.hash}}" class="hash" rel="nofollow" target="_blank">{{block.hash}}</a>
+      <td>{{#link-to 'account' block.login class='hash'}}{{block.login}}{{/link-to}}</td>
     {{else if block.orphan}}
       <span class="label label-danger">Orphan</span>
     {{else}}
-      <a href="https://expedition.dev/block/{{block.hash}}" class="hash" rel="nofollow" target="_blank">{{block.hash}}</a>
+      <td>{{#link-to 'account' block.login class='hash'}}{{block.login}}{{/link-to}}</td>
     {{/if}}
   </td>
   <td>{{format-date-locale block.timestamp}}</td>

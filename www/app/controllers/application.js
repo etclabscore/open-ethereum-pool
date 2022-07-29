@@ -32,6 +32,18 @@ export default Ember.Controller.extend({
     }
   }),
 
+  ethinr: Ember.computed('stats', {
+    get() {
+        return parseFloat(this.get('model.exchangedata.price_inr'));
+    }
+  }),
+
+ ethusd: Ember.computed('stats', {
+    get() {
+        return parseFloat(this.get('model.exchangedata.current_price'));
+    }
+  }),
+  
   hashrate: Ember.computed('difficulty', {
     get() {
       return this.getWithDefault('difficulty', 0) / config.APP.BlockTime;

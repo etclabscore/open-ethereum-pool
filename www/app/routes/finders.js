@@ -2,18 +2,13 @@ import Ember from 'ember';
 import config from '../config/environment';
 
 export default Ember.Route.extend({
-  intl: Ember.inject.service(),
-
-  beforeModel() {
-    this.get('intl').setLocale('tr-tr');
-  },
-
-	model: function() {
-    var url = config.APP.ApiUrl + 'api/stats';
+  model: function() {
+    var url = config.APP.ApiUrl + 'api/finders';
     return Ember.$.getJSON(url).then(function(data) {
-      return Ember.Object.create(data);
+      data.findersTotal = data.finders.length;
+      return data;
     });
-	},
+  },
 
   setupController: function(controller, model) {
     this._super(controller, model);
