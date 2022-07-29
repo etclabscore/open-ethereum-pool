@@ -367,3 +367,140 @@ h4.note {
 }
 
 /*--------------------------------------| x-x-x-x-x-x-x-x-x-x |--------------------------------------*/
+
+/* Background colors */
+.bg-red,
+.bg-yellow,
+.bg-aqua,
+.bg-blue,
+.bg-cherry,
+.bg-light-blue,
+.bg-green,
+.bg-navy,
+.bg-teal,
+.bg-olive,
+.bg-lime,
+.bg-orange,
+.bg-fuchsia,
+.bg-purple,
+.bg-maroon,
+.bg-grass,
+.bg-wood,
+.bg-black {
+    color: #f9f9f9 !important;
+}
+.bg-gray {
+    background-color: #eaeaec !important;
+}
+.bg-blackd{
+    background-color: #222222 !important;
+}
+.bg-red {
+    background-color: #f56954 !important;
+}
+.bg-yellow {
+    background-color: #f39c12 !important;
+}
+.bg-cherry{
+    background-color: #cd1231 !important;
+}
+.bg-aqua {
+    background-color: #00c0ef !important;
+}
+.bg-blue {
+    background-color: #0073b7 !important;
+}
+
+.bg-light-blue {
+    background-color: #5fb4ef !important;
+}
+.bg-wood{
+    background-color: #ab7d44 !important;
+}
+.bg-green {
+    background-color: #00a65a !important;
+}
+.bg-grass {
+    background-color: #a1c436 !important;
+}
+.bg-navy {
+    background-color: #001f3f !important;
+}
+.bg-teal {
+    background-color: #39cccc !important;
+}
+.bg-olive {
+    background-color: #7f8000 !important;
+}
+.bg-lime {
+    background-color: #00e405 !important;
+}
+.bg-orange {
+    background-color: #ff851b !important;
+}
+.bg-fuchsia {
+    background-color: #f012be !important;
+}
+.bg-purple {
+    background-color: #932ab6 !important;
+}
+.bg-maroon {
+    background-color: #85144b !important;
+}
+
+.bg-black {
+    background-color: #000 !important;
+}
+/* Text colors */
+.text-red {
+    color: #f56954 !important;
+}
+.text-yellow {
+    color: #f39c12 !important;
+}
+.text-aqua {
+    color: #00c0ef !important;
+}
+.text-blue {
+    color: #0073b7 !important;
+}
+.text-light-blue {
+    color: #3c8dbc !important;
+}
+.text-green {
+    color: #00a65a !important;
+}
+.text-navy {
+    color: #001f3f !important;
+}
+.text-teal {
+    color: #39cccc !important;
+}
+.text-olive {
+    color: #7f8000 !important;
+}
+.text-lime {
+    color: #01ff70 !important;
+}
+.text-orange {
+    color: #ff851b !important;
+}
+.text-fuchsia {
+    color: #f012be !important;
+}
+.text-purple {
+    color: #932ab6 !important;
+}
+.text-maroon {
+    color: #85144b !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.text-light-yellow
+{
+    color: #fefc2e  !important;
+
+}
