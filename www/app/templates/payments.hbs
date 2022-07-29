@@ -1,19 +1,19 @@
 <div class="jumbotron-brand">
   <div class="container">
-    <p class="lead">Bu havuz gönderim ücretlerini kendisi karşılar.</p>
-    <strong>Toplam Gönderilen Ödeme:</strong> <span class="label label-info">{{model.paymentsTotal}}</span>
+    <p class="lead">Pool always pays tx fees from it's own pocket for now.</p>
+    <strong>Total payments sent:</strong> <span class="label label-info">{{model.paymentsTotal}}</span>
   </div>
 </div>
 <div class="container">
   {{#if model.payments}}
-  <h4>Son Ödemeler</h4>
+  <h4>Latest Payouts</h4>
   <div class="table-responsive">
     <table class="table table-condensed table-striped">
       <thead>
         <tr>
-          <th>Zaman</th>
-          <th>Tutar</th>
-          <th>Adres</th>
+          <th>Time</th>
+          <th>Amount</th>
+          <th>Address</th>
           <th>Tx ID</th>
         </tr>
       </thead>
@@ -34,6 +34,6 @@
     </table>
   </div>
   {{else}}
-  <h3>Henüz Ödeme Yok</h3>
+  <h3>No payouts yet</h3>
   {{/if}}
 </div>
