@@ -1,13 +1,14 @@
 <div class="container">
+ {{high-charts mode=chartMode chartOptions=chartPayment content=chartData}}
   {{#if model.payments}}
-  <h4>Son Ödemeleriniz</h4>
+  <h4>Your Latest Payouts</h4>
   <div class="table-responsive">
     <table class="table table-condensed table-striped">
       <thead>
         <tr>
-          <th>Zaman</th>
+          <th>Time</th>
           <th>Tx ID</th>
-          <th>Tutar</th>
+          <th>Amount</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,6 @@
     </table>
   </div>
   {{else}}
-  <h3>Henüz Ödeme Yok</h3>
+  <h3>No payouts yet</h3>
   {{/if}}
 </div>
